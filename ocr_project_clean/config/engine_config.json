@@ -1,0 +1,8 @@
+
+{
+    "current_ai_engine": "paddle",
+    "current_format": "steel_quality_v1",
+    "available_ai_engines":["paddle"],
+    "available_formats":["steel_quality_v1", "generic_v1"]
+
+}

@@ -1,0 +1,6 @@
+{
+  "format_name": "steel_quality_v1",
+  "label": "钢铁质量缺陷",
+  "description": "四列表格：卷号/坯号/牌号/描述",
+  "type": "table"
+}

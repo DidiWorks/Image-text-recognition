@@ -1,0 +1,36 @@
+{
+  "app": {
+    "name": "OCR质量识别工具",
+    "version": "1.0.0"
+  },
+  "gui": {
+    "window_size": "1200x800",
+    "min_size": "800x600"
+  },
+  "ocr": {
+    "confidence_threshold": 0.8,
+    "use_angle_cls": true,
+    "lang": "ch",
+    "y_threshold": 10
+  },
+  "debug": { "steel_quality": true },
+  "features": {
+    "excel_export": false,
+    "auto_save": false
+  },
+  "output": {
+    "excel_path": "output/output_keywords.xlsx",
+    "captured_dir": "captured"
+  },
+  "excel": {
+    "enabled": false,
+    "output_path": "output/output_keywords.xlsx"
+  },
+  "engine": {
+    "current": "paddle"
+  },
+  "format": {
+    "current": "steel_quality_v1"
+  }
+  
+}

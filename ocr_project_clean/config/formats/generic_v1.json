@@ -1,0 +1,7 @@
+{
+  "format_name": "generic_v1",
+  "label": "通用文本",
+  "description": "支持文本换行显示",
+  "type": "text",
+  "wrap_width": 30
+}
