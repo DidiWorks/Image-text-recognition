@@ -88,9 +88,9 @@ def show_about(root):
     
     tk.Label(info_frame, text="OCR文字识别工具", font=("Arial", 16, "bold")).pack(pady=(0,10))
     tk.Label(info_frame, text="版本: 1.0.0").pack(pady=2)
-    tk.Label(info_frame, text="开发: 二级计算机").pack(pady=2)
+    tk.Label(info_frame, text="开发: 计算机").pack(pady=2)
     tk.Label(info_frame, text="功能: 图像文字识别").pack(pady=2)
-    tk.Label(info_frame,text="维护电话： 15xxxxx213").pack(pady=(0,10))
+    tk.Label(info_frame,text="维护电话： ").pack(pady=(0,10))
 
     # 按钮框架
     button_frame = tk.Frame(main_frame)
