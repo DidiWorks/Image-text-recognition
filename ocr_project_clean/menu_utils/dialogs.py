@@ -9,62 +9,7 @@ from .config import load_config, save_config
 from ocr_engine.engines.factory import list_engines
 from ocr_engine.formats.factory import list_formats
 
-def show_excel_settings(root):
-    """显示Excel设置界面"""
-    config = load_config()
-    
-    settings_window = tk.Toplevel(root)
-    settings_window.title("Excel设置")
-    settings_window.geometry("500x400")  # 增大窗口尺寸
-    settings_window.resizable(True, True)  # 允许调整大小
-    
-    settings_window.transient(root)
-    settings_window.grab_set()
-    
-    # 强制显示窗口
-    settings_window.deiconify()
-    settings_window.lift()
-    settings_window.focus_force()
-    
-    frame = tk.Frame(settings_window, padx=30, pady=30)  # 增加内边距
-    frame.pack(fill=tk.BOTH, expand=True)
-    
-    # 标题
-    title_label = tk.Label(frame, text="Excel导出设置", font=("Arial", 16, "bold"))
-    title_label.pack(pady=(0, 20))
-    
-    # Excel开关
-    excel_var = tk.BooleanVar(value=config.get("excel", {}).get("enabled", False))
-    excel_check = tk.Checkbutton(frame, text="启用Excel导出功能", variable=excel_var, 
-                                font=("Arial", 12))
-    excel_check.pack(anchor='w', pady=10)
-    
-    # 输出路径
-    path_label = tk.Label(frame, text="输出文件路径:", font=("Arial", 12))
-    path_label.pack(anchor='w', pady=(20,5))
-    
-    path_var = tk.StringVar(value=config.get("excel", {}).get("output_path", "output/output_keywords.xlsx"))
-    path_entry = tk.Entry(frame, textvariable=path_var, width=50, font=("Arial", 11))
-    path_entry.pack(fill=tk.X, pady=5)
-    
-    def save_excel_settings():
-        if "excel" not in config:
-            config["excel"] = {}
-        config["excel"]["enabled"] = excel_var.get()
-        config["excel"]["output_path"] = path_var.get()
-        save_config(config)
-        settings_window.destroy()
-    
-    button_frame = tk.Frame(frame)
-    button_frame.pack(fill=tk.X, pady=30)
-    
-    save_btn = tk.Button(button_frame, text="保存设置", command=save_excel_settings,
-                        width=12, height=2, font=("Arial", 11))
-    save_btn.pack(side=tk.RIGHT, padx=10)
-    
-    cancel_btn = tk.Button(button_frame, text="取消", command=settings_window.destroy,
-                          width=12, height=2, font=("Arial", 11))
-    cancel_btn.pack(side=tk.RIGHT)
+
 
 def show_about(root):
     """显示关于页面"""

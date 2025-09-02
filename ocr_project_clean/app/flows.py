@@ -5,7 +5,7 @@ from tkinter import filedialog, ttk
 from camera_widget import CameraWindow
 from cropper import select_and_crop_enhanced
 from ocr_engine import ocr_image
-from excel_utils import save_to_excel
+
 from menu_utils import load_config
 from .logger import logger, log_ocr_operation
 
@@ -151,14 +151,7 @@ def _ocr_then_export_and_compare(root, cropped_img):
 
     logger.log_ocr_result("OCR识别", text, 0.9, processing_time)
 
-    # Excel导出
-    config = load_config()
-    excel_cfg = config.get("excel", {})
-    enabled = excel_cfg.get("enabled", config.get("features", {}).get("excel_export", False))
-    export_path = excel_cfg.get("output_path", config.get("output", {}).get("excel_path", "output/output_keywords.xlsx"))
-    if enabled:
-        save_to_excel(text, export_path)
-        logger.log_ocr_result("Excel导出", f"保存到: {export_path}", 1.0, 0.0)
+
 
     # 对比窗口
     from gui_utils import show_compare_window

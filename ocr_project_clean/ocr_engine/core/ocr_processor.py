@@ -2,7 +2,7 @@
 OCR处理主逻辑
 """
 import time
-from ..config import load_config
+from menu_utils import load_config
 from ..engines.factory import get_engine
 from ..formats.factory import get_format
 

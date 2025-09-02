@@ -6,7 +6,7 @@
 # 导入核心功能
 from .config import load_config, save_config, get_default_config
 from .menu_bar import create_menu_bar
-from .dialogs import show_excel_settings, show_about, show_recognition_settings
+from .dialogs import  show_about, show_recognition_settings
 
 # 导出主要接口
 __all__ = [
@@ -19,7 +19,7 @@ __all__ = [
     'create_menu_bar',
     
     # 对话框
-    'show_excel_settings',
+
     'show_about',
     'show_recognition_settings'
 ]

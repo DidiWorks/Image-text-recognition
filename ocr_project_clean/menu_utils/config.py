@@ -41,9 +41,5 @@ def get_default_config():
         "ocr": {
             "confidence_threshold": 0.8,
             "lang": "ch"
-        },
-        "excel": {
-            "enabled": False,
-            "output_path": "output/output_keywords.xlsx"
         }
     }

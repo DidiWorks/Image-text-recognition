@@ -42,3 +42,15 @@ def refresh_highlighting(text_widget):
         apply_highlighting(text_widget)
     except Exception as e:
         pass
+def clear_highlighting(text_widget):
+    """移除关键词高亮"""
+    try:
+        text_widget.tag_remove("quality_issue", "1.0", tk.END)
+    except Exception:
+        pass
+def toggle_highlighting(text_widget, enabled: bool):
+    """开启/关闭高亮"""
+    if enabled:
+        refresh_highlighting(text_widget)
+    else:
+        clear_highlighting(text_widget)    

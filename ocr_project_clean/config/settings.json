@@ -13,18 +13,14 @@
     "lang": "ch",
     "y_threshold": 10
   },
-  "debug": { "steel_quality": true },
+  "debug": {
+    "steel_quality": true
+  },
   "features": {
-    "excel_export": false,
     "auto_save": false
   },
   "output": {
-    "excel_path": "output/output_keywords.xlsx",
     "captured_dir": "captured"
-  },
-  "excel": {
-    "enabled": false,
-    "output_path": "output/output_keywords.xlsx"
   },
   "engine": {
     "current": "paddle"
@@ -32,5 +28,4 @@
   "format": {
     "current": "steel_quality_v1"
   }
-  
 }

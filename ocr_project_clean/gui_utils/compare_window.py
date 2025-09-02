@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import font, filedialog
 from PIL import Image, ImageTk
 from window_utils import center_window
-
+from .text_highlighter import apply_highlighting, refresh_highlighting, toggle_highlighting
 from .keywords_manager import show_keywords_manager
 from .text_highlighter import apply_highlighting, refresh_highlighting
 
@@ -151,8 +151,6 @@ def show_compare_window(parent, image_input, text):
         """复制文本到剪贴板"""
         win.clipboard_clear()
         win.clipboard_append(text_box.get("1.0", tk.END))
-        # btn_copy.config(text="已复制！")
-        # win.after(1200, lambda: btn_copy.config(text="复制文本"))
 
     def save_text():
         """保存文本到文件"""
@@ -169,18 +167,20 @@ def show_compare_window(parent, image_input, text):
         except Exception as e:
             error("保存失败", str(e), parent=win)
 
+    # highlight_enabled = tk        
+
     # 创建按钮
     # btn_copy = tk.Button(btn_bar, text="复制文本", command=copy_text, width=10)
     btn_save = tk.Button(btn_bar, text="保存文件", command=save_text, width=10)
     btn_high = tk.Button(btn_bar, text="刷新高亮", command=lambda: refresh_highlighting(text_box), width=10)
     btn_kw = tk.Button(btn_bar, text="管理关键词", command=lambda: show_keywords_manager(parent=win), width=10)
-    btn_close = tk.Button(btn_bar, text="关闭窗口", command=win.destroy, width=10)
+   
 
     # btn_copy.pack(side=tk.LEFT, padx=3)
     btn_save.pack(side=tk.LEFT, padx=3)
     btn_high.pack(side=tk.LEFT, padx=12)
     btn_kw.pack(side=tk.LEFT, padx=3)
-    btn_close.pack(side=tk.RIGHT, padx=3)
+   
 
     # 状态栏
     status = tk.Frame(win)
